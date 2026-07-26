@@ -1,0 +1,29 @@
+So how do tokens works?
+This is needed to understand what we are doing in the shell
+
+we start with char *tokens and char **tokens
+Lets get these two out of the way
+When we do char *token we are pointing to
+a char/start of a string
+
+When we do char **tokens we are pointing to
+an array of strings
+
+Summary: 
+    char *token: a single string
+    char **tokens: a list of strings
+
+Now What are tokens?
+Lets say we have "ls -l"
+This combination of chars make up 2 tokens.
+token 1: ls
+token 2: -l
+
+But what about the space???? GREAT QUESTION
+
+You're right to believe the space would cause an issue.
+Hence, why we use strtok()
+strtok() breaks a string into pieces known as "tokens" 
+seperate by delimeter characters
+if we have strtok(input, " "); our delimeter is " " or space
+so whenever it sees a space it cuts it with '\0'
